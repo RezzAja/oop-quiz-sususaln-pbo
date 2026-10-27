@@ -14,13 +14,17 @@ package id.ac.polinema.oop;
  * (all fields must be private).
  */
 public class Inventory {
+    private Equipment[] equipments;
+    private int equipmentCount;
 
     /**
      * Creates an empty inventory: initialize the array with capacity 10
      * and the counter with 0.
      */
     public Inventory() {
-        throw new UnsupportedOperationException("Not implemented yet");
+        this.equipments = new Equipment[10];
+        this.equipmentCount = 0;
+        // throw new UnsupportedOperationException("Not implemented yet");
     }
 
     /**
@@ -30,8 +34,13 @@ public class Inventory {
      * @param equipment the equipment to add
      */
     public void addEquipment(Equipment equipment) {
-        throw new UnsupportedOperationException("Not implemented yet");
+        if (this.equipmentCount < 10) {
+            this.equipments[this.equipmentCount] = equipment;
+            this.equipmentCount++;
+
+        }
     }
+    
 
     /**
      * Searches the stored equipment by exact name.
@@ -40,10 +49,29 @@ public class Inventory {
      * @return the matching Equipment, or {@code null} when not found
      */
     public Equipment findEquipment(String name) {
-        throw new UnsupportedOperationException("Not implemented yet");
+        for (int i = 0; i < this.equipmentCount; i++) {
+            if (this.equipments[i].getName().equals(name)) {
+                return this.equipments[i];
+            }
+        }
+        return null;
     }
+    
 
     public int getEquipmentCount() {
-        throw new UnsupportedOperationException("Not implemented yet");
+        return this.equipmentCount;
+        
+    }
+
+    public Equipment[] getEquipments() {
+        return this.equipments;
+        
+    }
+
+    public void addIncreasesCount(Equipment equipment) {
+        if (this.equipmentCount < 10) {
+            this.equipments[this.equipmentCount] = equipment;
+            this.equipmentCount++;
+        }
     }
 }

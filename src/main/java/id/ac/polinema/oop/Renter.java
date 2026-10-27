@@ -11,6 +11,8 @@ package id.ac.polinema.oop;
  * (all fields must be private).
  */
 public class Renter {
+    private String renterId;
+    private String name;
 
     /**
      * Creates a renter and stores both parameters into the fields.
@@ -19,15 +21,19 @@ public class Renter {
      * @param name     renter's name
      */
     public Renter(String renterId, String name) {
-        throw new UnsupportedOperationException("Not implemented yet");
+        this.renterId = renterId;
+        this.name = name;
+       // throw new UnsupportedOperationException("Not implemented yet");
     }
 
     public String getRenterId() {
-        throw new UnsupportedOperationException("Not implemented yet");
+        return renterId;
+        //throw new UnsupportedOperationException("Not implemented yet");
     }
 
     public String getName() {
-        throw new UnsupportedOperationException("Not implemented yet");
+        return name;
+       // throw new UnsupportedOperationException("Not implemented yet");
     }
 
     /**
@@ -37,6 +43,12 @@ public class Renter {
      * @param name new name
      */
     public void setName(String name) {
-        throw new UnsupportedOperationException("Not implemented yet");
+        for (int i = 0; i < name.length(); i++) {
+            if (name == null || name.isBlank()) {
+                return;
+            }
+        }
+        this.name = name;
+       // throw new UnsupportedOperationException("Not implemented yet");
     }
 }

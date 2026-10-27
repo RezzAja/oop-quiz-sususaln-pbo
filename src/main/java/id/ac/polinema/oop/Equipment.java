@@ -36,6 +36,7 @@ public class Equipment {
     public double getDailyRate() {
         return dailyRate;
         
+        
     }
 
     /**

@@ -12,7 +12,8 @@ package id.ac.polinema.oop;
  * (all fields must be private).
  */
 public class Equipment {
-
+ private String name;
+ private double dailyRate;
     /**
      * Creates a piece of equipment and stores both parameters into the fields.
      *
@@ -20,15 +21,21 @@ public class Equipment {
      * @param dailyRate rental rate per day in Rupiah
      */
     public Equipment(String name, double dailyRate) {
-        throw new UnsupportedOperationException("Not implemented yet");
+        
+        this.name = name;
+        this.dailyRate = dailyRate;
+
+       // throw new UnsupportedOperationException("Not implemented yet");
     }
 
     public String getName() {
-        throw new UnsupportedOperationException("Not implemented yet");
+        return name;
+        
     }
 
     public double getDailyRate() {
-        throw new UnsupportedOperationException("Not implemented yet");
+        return dailyRate;
+        
     }
 
     /**
@@ -38,6 +45,8 @@ public class Equipment {
      * @param dailyRate new rate per day in Rupiah
      */
     public void setDailyRate(double dailyRate) {
-        throw new UnsupportedOperationException("Not implemented yet");
+        if (dailyRate >= 0) {
+            this.dailyRate  = dailyRate;
+        }
     }
 }
